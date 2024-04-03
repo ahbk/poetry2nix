@@ -13465,6 +13465,9 @@
   "psycopg": [
     "setuptools"
   ],
+  "psycopg-c": [
+    "setuptools"
+  ],
   "psycopg-pool": [
     "setuptools"
   ],

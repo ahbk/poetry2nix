@@ -2075,6 +2075,15 @@ lib.composeManyExtensions [
         CMDSTAN = "${pkgs.cmdstan}";
       });
 
+      psycopg-c = super.psycopg-c.overridePythonAttrs (
+        old: {
+          buildInputs = (old.buildInputs or [ ])
+            ++ lib.optional stdenv.isDarwin pkgs.openssl;
+          nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.postgresql ];
+        }
+      );
+
+
       psycopg2 = super.psycopg2.overridePythonAttrs (
         old: {
           buildInputs = (old.buildInputs or [ ])
