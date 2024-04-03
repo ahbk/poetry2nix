@@ -58,6 +58,7 @@ in
   inherit (poetry2nix) cli;
 
   ansible-molecule = callTest ./ansible-molecule { };
+  black = callTest ./black { };
   blinker-1_6_2 = callTest ./blinker-1_6_2 { };
   blinker = callTest ./blinker { };
   bcrypt = callTest ./bcrypt { };
@@ -100,6 +101,8 @@ in
 
   affine = callTest ./affine { };
   affine-pre-2-4 = callTest ./affine-pre-2-4 { };
+  cattrs = callTest ./cattrs { };
+  cattrs-pre-23-2 = callTest ./cattrs-pre-23-2 { };
   cdk-nag = callTest ./cdk-nag { };
   arrow = callTest ./arrow { };
   gdal = callTest ./gdal { };
@@ -109,9 +112,12 @@ in
   mutmut = callTest ./mutmut { };
   procrastinate = callTest ./procrastinate { };
   pytest-redis = callTest ./pytest-redis { };
+  pylint-django = callTest ./pylint-django { };
+  pylint-django-pre-2-5-4 = callTest ./pylint-django-pre-2-5-4 { };
   rasterio = callTest ./rasterio { };
   scientific = callTest ./scientific { };
   scipy1_9 = callTest ./scipy1_9 { };
+  scipy1_11 = callTest ./scipy1_11 { };
   test-group = callTest ./test-group { };
   nbconvert-wheel = callTest ./nbconvert-wheel { };
   duckdb-wheel = callTest ./duckdb-wheel { };
@@ -119,10 +125,8 @@ in
   textual-dev = callTest ./textual-dev { };
   textual-textarea = callTest ./textual-textarea { };
   fiona-source = callTest ./fiona-source { };
-  fiona-wheel = callTest ./fiona-wheel { };
   shapely-wheel = callTest ./shapely-wheel { };
   cffi-pandas-wheel = callTest ./cffi-pandas-wheel { };
-  pyarrow-wheel = callTest ./pyarrow-wheel { };
   mkdocstrings-wheel = callTest ./mkdocstrings-wheel { };
   test-extras = callTest ./test-extras { };
   test-no-extras = callTest ./test-no-extras { };
@@ -151,10 +155,17 @@ in
   gobject-introspection = callTest ./gobject-introspection { };
   python-versions-or = callTest ./python-versions-or { };
   python-markers = callTest ./python-markers { };
+  orjson-test = callTest ./orjson-test { };
+  ruff = callTest ./ruff { };
+  colour = callTest ./colour { };
+  pyodbc-wheel = callTest ./pyodbc-wheel { };
+  gnureadline = callTest ./gnureadline { };
 } // lib.optionalAttrs (!stdenv.isDarwin) {
   # pyqt5 = (callTest ./pyqt5 { });
   pyqt6 = callTest ./pyqt6 { };
   pyside6 = callTest ./pyside6 { };
+  pyarrow-wheel = callTest ./pyarrow-wheel { };
+  fiona-wheel = callTest ./fiona-wheel { };
 
   # Test deadlocks on darwin, sandboxing issue?
   dependency-environment = callTest ./dependency-environment { };
