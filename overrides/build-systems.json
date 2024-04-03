@@ -18474,6 +18474,9 @@
   "scour": [
     "setuptools"
   ],
+  "scout-apm": [
+    "setuptools"
+  ],
   "scp": [
     "setuptools"
   ],
