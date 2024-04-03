@@ -8961,6 +8961,9 @@
   "jsonmerge": [
     "setuptools"
   ],
+  "jsonmodels": [
+    "setuptools"
+  ],
   "jsonnet": [
     "setuptools"
   ],
