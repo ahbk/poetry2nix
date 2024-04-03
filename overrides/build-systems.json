@@ -21448,6 +21448,9 @@
       "from": "2.0.2"
     }
   ],
+  "urllib3-secure-extra": [
+    "flit-core"
+  ],
   "urlman": [
     "setuptools"
   ],
