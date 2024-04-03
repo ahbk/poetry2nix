@@ -4790,6 +4790,10 @@
   "django-crispy-forms": [
     "setuptools"
   ],
+  "django-crum": [
+    "setuptools",
+    "twine"
+  ],
   "django-cryptography": [
     "setuptools"
   ],
